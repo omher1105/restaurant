@@ -18,8 +18,8 @@ if($_POST){
 		    // Lee los registros
 		    while (($datos = fgetcsv($fichero, 0, ",", "\"", "\"")) !== FALSE) {
 		        // Crea un array asociativo con los nombres y valores de los campos
-		        for ($icampo = 0; $icampo < $num_campos; $icampo++) {
-		            $registro[$nombres_campos[$icampo]] = $datos[$icampo];
+		        for ($icampo = 0; $icampo <= 2; $icampo++) {
+		            $registro[$icampo] = $datos[$icampo];
 		        }
 		        // Añade el registro leido al array de registros
 		        $registros[] = $registro;
@@ -29,21 +29,21 @@ if($_POST){
 
 		
 
-		$results = array('ID' => '1','NOMBRE' => $post['nompla'],'PRECIO' => $post['prepla']);
-
+		$results = array('0' => '1','1' => $post['nompla'],'2' => $post['prepla']);
+		debug($results);
 		$data = array_merge(array($results),$registros);
 
 		debug($data);
 
 		if(!$results){
-			$file = new SplFileObject("../files/menu.csv", 'w');
+			$file = fopen("../files/menu.csv", 'w');
 			foreach ($data as $value) {
 				$file->fputcsv($value);
 			}
 			return true;
 			fclose($fp);
 		}
-		header("Location: http://localhost/restaurant/views/menu0.php");
+		//header("Location: http://localhost/restaurant/views/menu0.php");
 	}
 
 
