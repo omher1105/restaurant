@@ -1,4 +1,5 @@
 <?php include 'layout/header.php' ?>
+
 <h1>Bienvenidos</h1>
 <div class="row">
 	<div class="col-6" >

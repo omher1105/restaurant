@@ -45,7 +45,7 @@
         </form>
 	    </div> -->
     </nav>
-    <?php $menus = ['Bienvenidos','Nosotros','Platos de Fondo','Reservas','Ubicacion','Contacto']; ?>
+    <?php $menus = ['Bienvenidos','Nosotros','Platos de Fondo','Reservas','Ubicacion','Agregar Menú', 'Menu del Dia']; ?>
     <div class="container-fluid">
       <div class="row">
         <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar" style="background-color: #841818;">
